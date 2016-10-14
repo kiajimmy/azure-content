@@ -20,7 +20,9 @@
 
 # Using attributes to create advanced rules
 
-The Azure classic portal provides you with the ability to create advanced rules to enable more complex attribute-based dynamic memberships for Azure Active Directory (Azure AD) groups.
+The Azure classic portal provides you with the ability to create advanced rules to enable more complex attribute-based dynamic memberships for Azure Active Directory (Azure AD) groups.  
+
+When any attributes of a user change, the system evaluates all dynamic group rules in a directory to see if the attribute change of the user would trigger any group adds or removes. If a user satisfies a rule on a group, they are added as a member to that group. If they no longer satisfy the rule of a group they are a member of, they are removed as a members from that group.
 
 ## To create the advanced rule
 
@@ -218,7 +220,6 @@ You can also create a rule that selects device objects for membership in a group
 | deviceOwnership         | any string value                | (device.deviceOwnership -eq "")                             |
 | domainName              | any string value                | (device.domainName -eq "contoso.com")                       |
 | enrollmentProfileName   | any string value                | (device.enrollmentProfileName -eq "")                       |
-| enrollmentType          | any string value                | (device.enrollmentType -eq "")                              |
 | isRooted                | true false null                 | (device.deviceOSType -eq "true")                            |
 | managementType          | any string value                | (device.managementType -eq "")                              |
 | organizationalUnit      | any string value                | (device.organizationalUnit -eq "")                          |
